@@ -21,7 +21,9 @@ const getRequest = async (e) => {
         throw Error("ERROR");
     }
     response = await response.json();
-    console.log(response);
+    console.log(response.collection.items[4].links[0].href);
+    return response.collection.items;
+
 
 }
 
@@ -34,7 +36,7 @@ const renderResult = async (e) => {
 
     result.photos.forEach((photo) => {
         let pic = document.createElement("div");
-        pic.innerHTML = `<img src="${photo.collection.items[4].href}">`
+        pic.innerHTML = `<img src="${photo.collection.items[4].links[0].href}">`
             ;
 
     }
