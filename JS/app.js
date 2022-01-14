@@ -4,13 +4,11 @@ const searchForm = document.getElementById("search-form");
 const resultContainer = document.getElementById("result-container");
 const input = document.getElementById("search");
 const loader = document.getElementById("loading");
-// api_key=${apiKey}
+
 
 function displayLoading() {
     loader.classList.add("display");
-    setTimeout(() => {
-        loader.classList.remove("display")
-    }, 5000);
+
 }
 
 function hideLoading() {
@@ -37,7 +35,7 @@ const getRequest = async (e) => {
     }
     response = await response.json();
     hideLoading();
-    console.log(response.collection.items[4].links[0].href);
+    console.log(response.collection.items);
     return response.collection.items;
 
 
@@ -49,14 +47,19 @@ const renderResult = async (e) => {
     let results = await getRequest(e);
 
 
-    results.forEach((result) => {
+    results.forEach(() => {
         let pic = document.createElement("div");
-        pic.innerHTML = `<img src="${result.collection.items[4].links[0].href}">`
+        pic.innerHTML = `<img src="${results[0].links[0].href}">
+        <h2>${results[0].data[0].title}</h2>
+        <p>${results[0].data[0].date_created}</p>
+        <p>${results[0].data[0].description}</p>`
             ;
 
+        resultContainer.appendChild(pic);
     }
+
     )
-    resultContainer.appendChild(pic);
+
 };
 
 searchForm.addEventListener("submit", renderResult
