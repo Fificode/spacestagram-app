@@ -47,11 +47,12 @@ const renderResult = async (e) => {
     let results = await getRequest(e);
 
 
-    results.forEach(() => {
+    results.forEach((result) => {
         let pic = document.createElement("div");
-        pic.innerHTML = `<img src="${results[0].links[0].href}">
+        pic.classList.add("result");
+        pic.innerHTML = `<img src="${result.links[0].href}" class="img-style">
         <h2>${results[0].data[0].title}</h2>
-        <p>${results[0].data[0].date_created}</p>
+        <h3>${results[0].data[0].date_created}</h3>
         <p>${results[0].data[0].description}</p>`
             ;
 
