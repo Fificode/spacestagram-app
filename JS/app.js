@@ -51,9 +51,10 @@ const renderResult = async (e) => {
         let pic = document.createElement("div");
         pic.classList.add("result");
         pic.innerHTML = `<img src="${result.links[0].href}" class="img-style">
-        <h2>${results[0].data[0].title}</h2>
-        <h3>${results[0].data[0].date_created}</h3>
-        <p>${results[0].data[0].description}</p>`
+        <h2>${result.data[0].title}</h2>
+        <h3>${result.data[0].date_created}</h3>
+        <p>${result.data[0].description}</p>
+        <button class="like-button">Like</button>`
             ;
 
         resultContainer.appendChild(pic);
