@@ -5,6 +5,7 @@
 }
 body{
     font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
 }
 h1{
     font-size: 50px;
@@ -91,12 +92,33 @@ flex-direction: column;
 }
 .result{
     background-color: #fff;
+    border-radius: 2px;
     width: 500px;
-    height: 800px;
-    margin: 40px 0;
+   margin: 40px 0;
 }
 .img-style{
     width: 500px;
     height: 300px;
+   border-top-left-radius: 2px;
+   border-top-right-radius: 2px;
+}
+#like-button{
+    width: 70px;
+    height: 20px;
+    margin: 10px;
    
+}
+@media only screen and (max-width: 992px){
+    .search-container{
+       
+         margin: 200px 0 0 0;
+         
+    }
+.result{
+    width: 350px;
+    
+}
+.img-style{
+    width: 350px;
+}
 }

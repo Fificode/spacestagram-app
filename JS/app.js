@@ -1,5 +1,4 @@
 const apiKey = "dRubRkZc5TtGtdoG8GdGOaGDjGigGE5Pom6trrZB";
-const submitBtn = document.getElementById("search-button");
 const searchForm = document.getElementById("search-form");
 const resultContainer = document.getElementById("result-container");
 const input = document.getElementById("search");
@@ -54,15 +53,28 @@ const renderResult = async (e) => {
         <h2>${result.data[0].title}</h2>
         <h3>${result.data[0].date_created}</h3>
         <p>${result.data[0].description}</p>
-        <button class="like-button">Like</button>`
+        <button id="like-button">Like</button>`
             ;
+
+
 
         resultContainer.appendChild(pic);
     }
 
     )
 
-};
 
+};
+const likeButton = document.getElementById("like-button");
+function renderLikebutton() {
+    if (likeButton.clicked === true) {
+        likeButton.style.color = '#fff';
+        likeButton.style.backgroundColor = "red";
+    }
+    else {
+        console.log("Error");
+    }
+}
 searchForm.addEventListener("submit", renderResult
 );
+likeButton.addEventListener("click", renderLikebutton);
