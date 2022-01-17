@@ -28,6 +28,11 @@ const getRequest = async (e) => {
         }
 
     );
+
+    if (input.value === '') {
+        hideLoading();
+        console.log("Please provide a value");
+    }
     if (!response.ok) {
         throw Error("ERROR");
 
