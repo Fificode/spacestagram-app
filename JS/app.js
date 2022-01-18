@@ -36,8 +36,6 @@ const getRequest = async (e) => {
     hideLoading();
     console.log(response.collection.items);
     return response.collection.items;
-
-
 }
 
 
@@ -70,7 +68,7 @@ const renderResult = async (e) => {
                 }
             })
         })
-
+        resultContainer.scrollIntoView();
         resultContainer.appendChild(pic);
     }
 

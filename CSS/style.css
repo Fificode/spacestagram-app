@@ -103,6 +103,7 @@ flex-direction: column;
    border-top-right-radius: 2px;
 }
 .like-button{
+    cursor: pointer;
     background-color:#ddd;
     color: #000;
     border-radius: 3px;
