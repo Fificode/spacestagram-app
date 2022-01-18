@@ -60,12 +60,13 @@ const renderResult = async (e) => {
 
         likeButton.forEach((button) => {
             button.addEventListener('click', () => {
-                if (button.style.backgroundColor === "#ddd") {
-                    button.style.color = '#fff';
-                    button.style.backgroundColor = "red";
+                if (button.style.backgroundColor === "red") {
+                    button.style.color = '#000';
+                    button.style.backgroundColor = "#ddd";
                 }
                 else {
-                    console.log("Error");
+                    button.style.backgroundColor = "red";
+                    button.style.color = "#fff";
                 }
             })
         })
