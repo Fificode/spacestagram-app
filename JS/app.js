@@ -28,11 +28,6 @@ const getRequest = async (e) => {
         }
 
     );
-
-    if (input.value === '') {
-        hideLoading();
-        console.log("Please provide a value");
-    }
     if (!response.ok) {
         throw Error("ERROR");
 
@@ -58,10 +53,22 @@ const renderResult = async (e) => {
         <h2>${result.data[0].title}</h2>
         <h3>${result.data[0].date_created}</h3>
         <p>${result.data[0].description}</p>
-        <button id="like-button">Like</button>`
+        <button class="like-button">Like</button>`
             ;
 
+        const likeButton = document.querySelectorAll("like-button");
 
+        likeButton.forEach((button) => {
+            button.addEventListener('click', () => {
+                if (button.style.backgroundColor === "#ddd") {
+                    button.style.color = '#fff';
+                    button.style.backgroundColor = "red";
+                }
+                else {
+                    console.log("Error");
+                }
+            })
+        })
 
         resultContainer.appendChild(pic);
     }
@@ -70,16 +77,5 @@ const renderResult = async (e) => {
 
 
 };
-const likeButton = document.getElementById("like-button");
-function renderLikebutton() {
-    if (likeButton.clicked === true) {
-        likeButton.style.color = '#fff';
-        likeButton.style.backgroundColor = "red";
-    }
-    else {
-        console.log("Error");
-    }
-}
-searchForm.addEventListener("submit", renderResult
-);
-likeButton.addEventListener("click", renderLikebutton);
+
+searchForm.addEventListener("submit", renderResult);

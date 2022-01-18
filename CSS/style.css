@@ -102,9 +102,11 @@ flex-direction: column;
    border-top-left-radius: 2px;
    border-top-right-radius: 2px;
 }
-#like-button{
+.like-button{
+    background-color:#ddd;
+    border-radius: 3px;
     width: 70px;
-    height: 20px;
+    height: 23px;
     margin: 10px;
    
 }
