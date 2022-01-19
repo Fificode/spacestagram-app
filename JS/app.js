@@ -54,7 +54,7 @@ const renderResult = async (e) => {
         <button class="like-button">Like</button>`
             ;
 
-        const likeButton = document.querySelectorAll("like-button");
+        const likeButton = document.querySelectorAll(".like-button");
 
         likeButton.forEach((button) => {
             button.addEventListener('click', () => {
